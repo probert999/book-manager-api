@@ -27,7 +27,11 @@ public class BookManagerController {
     public ResponseEntity<Book> getBookById(@PathVariable Long bookId) {
         return new ResponseEntity<>(bookManagerService.getBookById(bookId), HttpStatus.OK);
     }
-
+    @DeleteMapping({"/{bookId}"})
+    public ResponseEntity deleteBooks(@PathVariable Long bookId) {
+        bookManagerService.deleteBookById(bookId);
+        return new ResponseEntity<>(HttpStatus.OK);
+    }
     @PostMapping
     public ResponseEntity<Book> addBook(@RequestBody Book book) {
         Book newBook = bookManagerService.insertBook(book);
@@ -42,5 +46,7 @@ public class BookManagerController {
         bookManagerService.updateBookById(bookId, book);
         return new ResponseEntity<>(bookManagerService.getBookById(bookId), HttpStatus.OK);
     }
+
+
 
 }
