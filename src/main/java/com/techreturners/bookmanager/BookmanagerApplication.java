@@ -31,8 +31,8 @@ public class BookmanagerApplication {
 
     private ApiInfo apiInformation() {
         return new ApiInfoBuilder()
-                .title(" Minimalist Book Manager API")
-                .description("Need a helping hand to manage your books? This is the API for you !")
+                .title("Book Manager API")
+                .description("Does what is says on the tin (title) ... manages books!")
                 .version("v1")
                 .build();
     }
